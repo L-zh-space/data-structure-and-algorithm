@@ -30,10 +30,10 @@ import java.util.ArrayList;
 class Solution {
   public int maxDepth(TreeNode root) {
     if (root == null)
-      return 0; // 步骤1：基准情况
+      return 0; // 步骤1：“归”条件
 
-    int leftDepth = maxDepth(root.left); // 步骤2：问左孩子要答案
-    int rightDepth = maxDepth(root.right); // 步骤3：问右孩子要答案
+    int leftDepth = maxDepth(root.left); // 步骤2：“递”，问左孩子要答案
+    int rightDepth = maxDepth(root.right); // 步骤3：“递”，问右孩子要答案
 
     return Math.max(leftDepth, rightDepth) + 1; // 步骤4：判断左右最大并加上自己这一层
   }
